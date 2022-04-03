@@ -16,7 +16,9 @@ export const LoginScreen = () => {
     }
     dispatch(action);
 
-    navigate('/marvel',{
+    const lastPath = localStorage.getItem('lastPath') || '/marvel'
+
+    navigate(lastPath,{
       replace: true
     });
   }
@@ -24,7 +26,7 @@ export const LoginScreen = () => {
   return (
     <div className='container ,t-5'>
         <h1>Login</h1>
-        <hr/>Login
+        <hr/>
         <button
           className='btn btn-primary'
           onClick={handleLogin}
